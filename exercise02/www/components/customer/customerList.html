@@ -15,13 +15,13 @@
 			<div class="form-horizontal">
 				<div class="form-group">
 					<div class="col-md-2"><label class="control-label pull-right">顧客ID</label></div>
-					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="condition.customerId"/></div>
+					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="$ctrl.condition.customerId"/></div>
 				</div>
 				<div class="form-group" style="margin-bottom: 0px">
 					<div class="col-md-2"><label class="control-label pull-right">顧客名</label></div>
-					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="condition.name" /></div>
+					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="$ctrl.condition.name" /></div>
 					<div class="col-md-offset-4 col-md-3">
-						<input type="button" class="btn btn-primary pull-right" style="width: 48%" x-ng-click="findList()" value="検索" />
+						<input type="button" class="btn btn-primary pull-right" style="width: 48%" x-ng-click="$ctrl.findList()" value="検索" />
 					</div>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 
 	<table class="table table-striped">
 		<caption>
-			<input type="button" class="btn btn-primary btn-sm pull-right" x-ng-click="showDialog()" value="新規作成" />
+			<input type="button" class="btn btn-primary btn-sm pull-right" x-ng-click="$ctrl.showDialog()" value="新規作成" />
 		</caption>
 		<thead>
 			<tr>
@@ -45,7 +45,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr x-ng-repeat="customer in customers">
+			<tr x-ng-repeat="customer in $ctrl.customers">
 				<td>{{customer.customerId}}</td>
 				<td>{{customer.name}}</td>
 				<td>{{customer.zip}}</td>

@@ -2,18 +2,18 @@ angular.module("app")
 .controller("LoginController",
     ["$scope", "$location", "AppPot", function($scope, $location, AppPot) {
 
-	$scope.userName = "Trainer1";
-	$scope.password = "Trainer1";
+	this.userName = "Trainer1";
+	this.password = "Trainer1";
 
-	$scope.login = function() {
-		AppPot.LocalAuthenticator.login($scope.userName, $scope.password)
-		.then(function(authInfo) {
+	this.login = function() {
+		AppPot.LocalAuthenticator.login(this.userName, this.password)
+		.then(() => {
             $location.path("/");
 			$scope.$apply();
 		})
-		.catch(function(error) {
+		.catch(error => {
     		if (error.code && error.code == "111") {
-    			$scope.alert = {msg: error.description};
+    			this.alert = {msg: error.description};
 				$scope.$apply();
     		}
     		else {

@@ -3,10 +3,12 @@ angular.module("app", ["ngRoute", "ui.bootstrap"])
 	$routeProvider
 		.when("/login", {
 			controller: "LoginController",
+			controllerAs : "$ctrl",
 			templateUrl: "components/auth/login.html?v=" + new Date().getTime()
 		})
 		.when("/customer", {
 			controller: "CustomerController",
+			controllerAs : "$ctrl",
 			templateUrl: "components/customer/customerList.html?v=" + new Date().getTime()
 		})
 		.otherwise({
