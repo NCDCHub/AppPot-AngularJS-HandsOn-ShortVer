@@ -2,8 +2,8 @@ angular.module("app")
 .controller("LoginController",
     ["$scope", "$location", "AppPot", function($scope, $location, AppPot) {
 
-	this.userName = "demo";
-	this.password = "changeit";
+	this.userName = "";
+	this.password = "";
 
 	this.login = function() {
 		AppPot.LocalAuthenticator.login(this.userName, this.password)
